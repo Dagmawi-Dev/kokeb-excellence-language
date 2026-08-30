@@ -61,7 +61,7 @@ export const familyStories: FamilyStory[] = [
     alt: "Representative portrait of Ethiopian parents",
     quote:
       "Flexible weekend lessons helped us stay consistent. The children look forward to class, and the language is becoming part of normal life at home.",
-    role: "Parent of two young learners",
+    role: "Parent of two learners",
     language: "Flexible schedule",
   },
 ];
