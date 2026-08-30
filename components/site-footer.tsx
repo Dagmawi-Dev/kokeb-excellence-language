@@ -29,11 +29,12 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <span className="footer-label">Programs</span>
+          <span className="footer-label">Explore</span>
+          <Link href="/#home">Home</Link>
+          <Link href="/#why-kokeb">Why Kokeb</Link>
           <Link href="/#languages">Languages</Link>
-          <Link href="/why-kokeb">Why Kokeb</Link>
           <Link href="/#how-it-works">How it works</Link>
-          <Link href="/testimonials">Testimonials</Link>
+          <Link href="/#stories">Family stories</Link>
         </div>
         <div>
           <span className="footer-label">Schedule</span>

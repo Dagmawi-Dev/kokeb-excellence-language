@@ -16,10 +16,11 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { TrialDialog } from "@/components/trial-dialog";
 
 const nav = [
+  { label: "Home", href: "/#home" },
+  { label: "Why Kokeb", href: "/#why-kokeb" },
   { label: "Languages", href: "/#languages" },
-  { label: "Why Kokeb", href: "/why-kokeb" },
-  { label: "Schedule", href: "/#schedule" },
-  { label: "Stories", href: "/#stories" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Family Stories", href: "/#stories" },
   { label: "Contact", href: "/#contact" },
 ];
 

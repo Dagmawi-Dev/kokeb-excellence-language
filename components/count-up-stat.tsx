@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { GraduationCap, Presentation } from "lucide-react";
 
 type CountUpStatProps = {
   value: number;
   suffix?: string;
   label: string;
+  type: "students" | "teachers";
 };
 
-export function CountUpStat({ value, suffix = "", label }: CountUpStatProps) {
+export function CountUpStat({ value, suffix = "", label, type }: CountUpStatProps) {
   const [count, setCount] = useState(0);
   const statRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +31,7 @@ export function CountUpStat({ value, suffix = "", label }: CountUpStatProps) {
         if (!entry.isIntersecting || started) return;
         started = true;
         const start = performance.now();
-        const duration = 850;
+        const duration = 1700;
 
         const animate = (now: number) => {
           const progress = Math.min((now - start) / duration, 1);
@@ -41,7 +43,7 @@ export function CountUpStat({ value, suffix = "", label }: CountUpStatProps) {
         frame = requestAnimationFrame(animate);
         observer.disconnect();
       },
-      { threshold: 0.35 },
+      { threshold: 0.65 },
     );
 
     observer.observe(node);
@@ -53,8 +55,13 @@ export function CountUpStat({ value, suffix = "", label }: CountUpStatProps) {
 
   return (
     <div className="community-proof-stat" ref={statRef}>
-      <strong aria-label={`${value}${suffix}`}>{count}{suffix}</strong>
-      <span>{label}</span>
+      <span className="community-proof-icon" aria-hidden="true">
+        {type === "students" ? <GraduationCap /> : <Presentation />}
+      </span>
+      <span className="community-proof-number">
+        <strong aria-label={`${value}${suffix}`}>{count}{suffix}</strong>
+        <span>{label}</span>
+      </span>
     </div>
   );
 }
