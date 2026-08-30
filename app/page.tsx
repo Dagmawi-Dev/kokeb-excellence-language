@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   ArrowRight,
   CalendarDays,
@@ -32,22 +31,22 @@ const viberOne = "viber://chat?number=%2B251959137573";
 const viberTwo = "viber://chat?number=%2B251945238739";
 
 const languages = [
-  { name: "Amharic", native: "አማርኛ", accent: "language-red" },
+  { name: "Amharic", native: "አማርኛ" },
   { name: "Tigrinya", native: "ትግርኛ", accent: "language-gold" },
-  { name: "Afaan Oromo", native: "Afaan Oromoo", accent: "language-green" },
-  { name: "Other Ethiopian languages", native: "Ask us", accent: "language-blue" },
+  { name: "Afaan Oromo", native: "Afaan Oromoo" },
+  { name: "Other Ethiopian languages", native: "Ask us" },
 ];
 
 const benefits = [
   {
     icon: UserRoundCheck,
-    title: "One learner. One young teacher.",
+    title: "One learner. One teacher.",
     text: "Your child gets full attention from a friendly teacher who follows their pace, level and goals.",
   },
   {
     icon: MessagesSquare,
     title: "Learning that feels active",
-    text: "Conversation, games and guided practice keep young learners involved instead of simply watching.",
+    text: "Conversation, games and guided practice keep learners involved instead of simply watching.",
   },
   {
     icon: HeartHandshake,
@@ -135,7 +134,7 @@ export default function Home() {
         <img
           className="hero-background"
           src="/images/kokeb-hero-female-teacher-boy.webp"
-          alt="A young Ethiopian boy learning online with a friendly young female teacher visible on his laptop"
+          alt="An Ethiopian boy learning online with a friendly female teacher visible on his laptop"
           fetchPriority="high"
           decoding="async"
         />
@@ -143,11 +142,11 @@ export default function Home() {
         <div className="section-shell hero-inner">
           <div className="hero-copy">
             <div className="eyebrow hero-eyebrow">
-              <span className="live-dot" /> Young teachers · Ages 8 and above
+              <span className="live-dot" /> Private live classes · Ages 8 and above
             </div>
             <h1>
-              One young teacher. One confident speaker.
-              <span>Closer to home.</span>
+              <span className="hero-heading-small">One to one Ethiopian language lessons</span>
+              <span className="hero-heading-main">Closer to family. Closer to home.</span>
             </h1>
             <p className="hero-lead">
               Live one to one Ethiopian language lessons that are personal,
@@ -176,8 +175,8 @@ export default function Home() {
             <span className="section-kicker">Trusted by a growing community</span>
             <p>Confidence in their language. Connection to their culture.</p>
           </div>
-          <CountUpStat value={350} suffix="+" label="Students supported" />
-          <CountUpStat value={40} suffix="+" label="Teachers in the community" />
+          <CountUpStat value={450} suffix="+" label="Students learning with Kokeb" type="students" />
+          <CountUpStat value={30} suffix="+" label="Teachers in our community" type="teachers" />
         </div>
       </section>
 
@@ -187,9 +186,9 @@ export default function Home() {
             <span className="section-kicker">Why one to one works</span>
             <h2>The class moves with the learner, not the crowd.</h2>
             <p>A private teacher can slow down, repeat, challenge and celebrate progress at exactly the right moment. That means more speaking, more confidence and no pressure to keep up with a group.</p>
-            <Link className="text-link" href="/why-kokeb">
-              Explore why families choose Kokeb <ArrowRight aria-hidden="true" />
-            </Link>
+            <a className="text-link" href="#how-it-works">
+              See how the free trial works <ArrowRight aria-hidden="true" />
+            </a>
           </div>
           <div className="why-reasons-list">
             {benefits.map(({ icon: Icon, title, text }, index) => (
@@ -214,7 +213,7 @@ export default function Home() {
 
         <div className="language-grid">
           {languages.map((language) => (
-            <a className={`language-card ${language.accent}`} href={whatsappOne} key={language.name} target="_blank" rel="noopener noreferrer">
+            <a className="language-card language-gold" href={whatsappOne} key={language.name} target="_blank" rel="noopener noreferrer">
               <div className="language-card-top">
                 <Languages aria-hidden="true" />
                 <span>Live 1:1</span>
@@ -285,9 +284,7 @@ export default function Home() {
               <span className="section-kicker">Family stories</span>
               <h2>What personal learning can feel like.</h2>
             </div>
-            <Link className="button button-quiet" href="/testimonials">
-              More family stories <ArrowRight aria-hidden="true" />
-            </Link>
+            <TrialDialog label="Start a free trial" className="button button-quiet" />
           </div>
 
           <div className="voice-marquee" aria-label="Sample family stories">

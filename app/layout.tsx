@@ -10,8 +10,9 @@ export const metadata: Metadata = {
   description:
     "Live one to one online Ethiopian language classes in Amharic, Tigrinya, Afaan Oromo and more for learners ages 8 and up.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/images/logo-navbar.png",
+    shortcut: "/images/logo-navbar.png",
+    apple: "/images/logo-navbar.png",
   },
 };
 
